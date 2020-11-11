@@ -1,10 +1,10 @@
 "use strict";
 const section = document.querySelector(".section");
 const time = document.getElementById("time");
-const greatings = document.querySelector(".greatings");
-const name = document.querySelector(".name");
-const goal = document.querySelector(".goal");
-const image = document.querySelector(".image");
+const greatings = section.querySelector(".greatings");
+const name = section.querySelector(".name");
+const goal = section.querySelector(".goal");
+const image = section.querySelector(".image");
 let amPm;
 
 goal.addEventListener("keypress", setGoalToLocalStorage);
@@ -12,7 +12,7 @@ goal.addEventListener("blur", setGoalToLocalStorage);
 name.addEventListener("keypress", setNameToLocalStorage);
 name.addEventListener("blur", setNameToLocalStorage);
 
-setInterval(changeTime, 1000);
+setInterval(changeTime, changeTime(), 1000);
 getNameLocalStorage();
 getGoalToLocalStorage();
 
@@ -40,23 +40,25 @@ function checkZero(number) {
 
 function chengeGreating() {
   const hour = new Date().getHours();
+  const backgroundImageProperty = "no-repeat center";
   if (hour < 6) {
     greatings.textContent = "Good Night,";
-    section.style.background = `url(image/img4.jpg) no-repeat center`
+    section.style.background = `url(image/img4.jpg) ${backgroundImageProperty}`
     section.style.color = "#fff";
   } else if (hour < 12) {
     greatings.textContent = "Good Morning,";
-    section.style.background = `url(image/img1.jpg) no-repeat center`
+    section.style.background = `url(image/img1.jpg) ${backgroundImageProperty}`
     section.style.color = "#000";
   } else if (hour < 18) {
     greatings.textContent = "Good Afternoon,";
-    section.style.background = `url(image/img2.jpg) no-repeat center`
+    section.style.background = `url(image/img2.jpg) ${backgroundImageProperty}`
     section.style.color = "#000";
   } else if (hour < 23.59) {
     greatings.textContent = "Good Evening,";
-    section.style.background = `url(image/img3.jpg) no-repeat center`
+    section.style.background = `url(image/img3.jpg) ${backgroundImageProperty}`
     section.style.color = "#fff";
   }
+  
 }
 
 function setNameToLocalStorage(e) {

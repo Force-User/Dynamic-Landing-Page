@@ -5,12 +5,25 @@
   font-family: "Courgette", cursive;
   outline: none;
 }
+time {
+  display: flex;
+  font-size: 8rem;
+}
+h1 {
+  font-size: 3rem;
+  word-spacing: 10px;
+}
+h2 {
+  font-size: 2rem;
+  text-align: center;
+}
 .section {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
   position: relative;
+  
   background: url(image/city1.jpg) no-repeat center contain;
 }
 .image {
@@ -20,26 +33,24 @@
 }
 .wrapper {
   width: 1020px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   color: #fff;
-  text-shadow: 0px 0px 3px black;
+  text-shadow: 3px 3px 1px black;
   z-index: 1;
 }
-time {
-  font-size: 8rem;
+.name {
+  transition: .5s;
 }
-h1 {
-  font-size: 3rem;
-  word-spacing: 10px;
-}
-h2 {
-  font-size: 2rem;
+.name:hover,.goal:hover {
+ color: rgb(66, 66, 66);
 }
 .goal {
   border-bottom: 2px solid #fff;
+  transition: .5s;
 }
 @media (max-width: 740px) {
   time {
